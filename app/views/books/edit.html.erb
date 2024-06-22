@@ -1,2 +1,19 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+
+<% if @book .errors.any? %>
+ <%= @book.errors.count %>errors prohibited this book from being saved:
+ <ul>
+   <% @book.errors.full_messages.each do |message| %>
+    <li><% message %></li>
+  <% end %>
+<% end %>
+<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+<p>本のタイトル</p>
+<%= f.text_field :title %>
+<p>感想</p>
+<%= f.text_area :body %>
+<br>
+<%= f.submit 'Update Book' %>
+<%= link_to "Show", book_path  %>
+<%= link_to "Back", 'javascript:history.back(-2)' %>
+<% end %>

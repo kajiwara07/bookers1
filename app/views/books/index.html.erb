@@ -1,8 +1,16 @@
 
-<h1>Books</h1>
+<div class="book-wrap">
+<% @books.each do |book| %>
+   <div class="book-comment">
+        <span class="book-body"><%= book.body %></span>
+        <span class="book-title"><%=link_to book.title, book_path(book.id) %></span>
+    </div>
+   </div>
+<% end %>
+ </div>
+<h1>bookers</h1>
 <% @book.each do |book| %>
-<p></p>
-
-<h2>New book</h2>
-
+ <p>本のタイトル</p>
+ <span><%=link_to book.title, book_path(book.id) %>
+ </span>
 <% end %>

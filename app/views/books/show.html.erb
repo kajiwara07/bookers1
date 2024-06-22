@@ -1,10 +1,14 @@
-<h1>books</h1>
-<p><%= @books.title %></p>
+<div>
+<%= flash[:notice] = "Book was successfully created." %>
+</div>
 
-<h3>Title
-<span>Body</span>
-</h3>
-<p><%= @books.body %></p>
+<p>本のタイトル:
+<span><%= @book.body %></span></p>
 
-<>
+<p>感想:
+<span><%= @book.title %></span></p>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+|
+<%= link_to "Back", 'javascript:history.back(-2)' %>
 
