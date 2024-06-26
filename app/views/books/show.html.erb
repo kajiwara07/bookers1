@@ -1,14 +1,14 @@
-<div>
-<%= flash[:notice] = "Book was successfully created." %>
+<div class="flash">
+  <%= flash[:notice]  %>
 </div>
 
 <p>本のタイトル:
-<span><%= @book.body %></span></p>
+<span><%= @book.title %></span></p>
 
 <p>感想:
-<span><%= @book.title %></span></p>
+<span><%= @book.body %></span></p>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
 |
-<%= link_to "Back", 'javascript:history.back(-2)' %>
+<%= link_to "Back", 'javascript:history.back(-3)' %>
 
