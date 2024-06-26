@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   end
 
   def top
+    
   end
 
   def create
@@ -18,11 +19,7 @@ class BooksController < ApplicationController
   end
   def index
     @books = Book.all
-  if params[:id].present?
-    set_book
-  else
     @book = Book.new
-  end
   end
 
   def show
