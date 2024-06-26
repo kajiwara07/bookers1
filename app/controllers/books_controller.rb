@@ -13,7 +13,6 @@ class BooksController < ApplicationController
     redirect_to book_path(@book.id)
    else
     @books = Book.all
-    flash.now[:alert] = "Posting failed"
     render action: :index
    end
   end

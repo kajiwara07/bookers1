@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+<%= form_with model: @book do |f| %>
 <p>本のタイトル</p>
 <%= f.text_field :title %>
 <p>感想</p>
